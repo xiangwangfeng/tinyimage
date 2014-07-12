@@ -1,4 +1,4 @@
-#include "base/Brightness.h"
+ï»¿#include "base/Brightness.h"
 #include "base/BlendMode.h"
 #include "filter/GaussBlur.h"
 #include "filter/SoftGlow.h"
@@ -9,13 +9,13 @@ void	SoftGlow(TiBitmapData& bitmap)
 {
 	TiBitmapData* clone = bitmap.Clone();
 
-	//¸ßË¹Ä£ºı
+	//é«˜æ–¯æ¨¡ç³Š
 	GaussianBlur(*clone,5);
 	
-	//µ×²ãÍ¼²ãÉÙĞíµ÷ÕûÁÁ¶È
+	//åº•å±‚å›¾å±‚å°‘è®¸è°ƒæ•´äº®åº¦
 	AdjustBrightness(bitmap,0.05);
 
-	//Á½¸öÍ¼²ã×öÂËÉ«»ìºÏ
+	//ä¸¤ä¸ªå›¾å±‚åšæ»¤è‰²æ··åˆ
 	BlendMode(bitmap,TINYIMAGE_CHANEL_RGB,*clone,TINYIMAGE_CHANEL_RGB,
 			   TINYIMAGE_BLENDMODE_SCREEN,1);
 

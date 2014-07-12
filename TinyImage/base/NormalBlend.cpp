@@ -1,4 +1,4 @@
-#include "global/ColorType.h"
+﻿#include "global/ColorType.h"
 #include "base/NormalBlend.h"
 namespace TinyImage{
 
@@ -54,12 +54,12 @@ void	BlendLayerMask(TiBitmapData& bitmap, TinyRGBA *mask,int maskX, int maskY, i
 	TINYIMAGE_ASSERT_VOID(maskY >= 0 && maskY + maskHeight <= height);
 
 
-	// �ɰ�ͼ��Ҫɨ��ķ�Χ
+	// 蒙板图需要扫描的范围
 	int maskStartX	= 0;
 	int maskStartY	= 0;
 
 
-	//Bitmapɨ��ķ�Χ
+	//Bitmap扫描的范围
 	int startY	= maskY;
 	int endY	= maskY + maskHeight;
 	int startX	= maskX;

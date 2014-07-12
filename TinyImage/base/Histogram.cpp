@@ -1,4 +1,4 @@
-#include "global/ColorType.h"
+﻿#include "global/ColorType.h"
 #include "base/Histogram.h"
 #include <cstring>
 namespace TinyImage{

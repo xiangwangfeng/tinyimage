@@ -1,6 +1,6 @@
-/**
+ï»¿/**
  * @file    BitmapData.h
- * @brief   ¶ÔÍ¼Æ¬Êı¾İµÄ·â×°Àà
+ * @brief   å¯¹å›¾ç‰‡æ•°æ®çš„å°è£…ç±»
  * @author  xiangwangfeng <xiangwangfeng@gmail.com>
  * @since   2010-12
  * @website www.xiangwangfeng.com
@@ -12,7 +12,7 @@
 
 namespace TinyImage{
 
-//¶ÔÍ¼Æ¬Êı¾İ¿éµÄ¼òµ¥°ü×°Àà
+//å¯¹å›¾ç‰‡æ•°æ®å—çš„ç®€å•åŒ…è£…ç±»
 class TiBitmapData
 {
 public:

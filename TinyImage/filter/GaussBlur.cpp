@@ -1,4 +1,4 @@
-#include "filter/GaussBlur.h"
+ï»¿#include "filter/GaussBlur.h"
 #include <cmath>
 
 namespace TinyImage{
@@ -236,14 +236,14 @@ void	GaussianBlur(TiBitmapData& bitmap,float radius)
 
 	TiBitmapData* clone = bitmap.Clone();
 
-	//ºáÏò
+	//æ¨ªå‘
 	for (int i = 0; i < height; i++)
 	{
 		BlurLine(ctable,cmatrix,cmatrix_length,
 					bitmap.GetRow(i),clone->GetRow(i),width,bpp);
 	}
 
-	//×İÏò
+	//çºµå‘
 	u8* srcLine = new u8[bpp*height];
 	u8* dstLine	= new u8[bpp*height];
 	for (int i = 0; i < width; i++)

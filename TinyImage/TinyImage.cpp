@@ -1,4 +1,4 @@
-#include "TinyImage.h"
+﻿#include "TinyImage.h"
 #include "base/Histogram.h"
 #include "base/ColorBalance.h"
 #include "base/Levels.h"

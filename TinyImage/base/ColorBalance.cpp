@@ -1,4 +1,4 @@
-#include "GlobalData.h"
+ï»¿#include "GlobalData.h"
 #include "base/ColorBalance.h"
 #include "base/Curve.h"
 
@@ -7,12 +7,12 @@ namespace TinyImage{
 
 static bool transferInit = false;
 
-//±äÁÁµÄ×ª»»Êı×é
+//å˜äº®çš„è½¬æ¢æ•°ç»„
 static double  highlights_add[256] = { 0 };
 static double  midtones_add[256]   = { 0 };
 static double  shadows_add[256]    = { 0 };
 
-//±ä°µµÄ×ª»»Êı×é
+//å˜æš—çš„è½¬æ¢æ•°ç»„
 static double  highlights_sub[256] = { 0 };
 static double  midtones_sub[256]   = { 0 };
 static double  shadows_sub[256]    = { 0 };
@@ -41,7 +41,7 @@ void BalanceColor(TiBitmapData& bitmap,int cyan, int magenta, int yellow,
 	TINYIMAGE_ASSERT_VOID(magenta>= -100 && magenta<=100);
 	TINYIMAGE_ASSERT_VOID(yellow>= -100 && yellow<=100);
 
-	//³õÊ¼»¯É«²Êµ÷ÕûÇøÓò²ÎÊı
+	//åˆå§‹åŒ–è‰²å½©è°ƒæ•´åŒºåŸŸå‚æ•°
 	double  cyan_red[3];
 	double  magenta_green[3];
 	double  yellow_blue[3];
@@ -56,11 +56,11 @@ void BalanceColor(TiBitmapData& bitmap,int cyan, int magenta, int yellow,
 	yellow_blue[mode] = yellow;
 
 
-	//³õÊ¼»¯×ª»»ÓÃµÄÊı×é
+	//åˆå§‹åŒ–è½¬æ¢ç”¨çš„æ•°ç»„
 	InitTransferArray();
 
 
-	//´´½¨LOOKUP TABLE
+	//åˆ›å»ºLOOKUP TABLE
 	double  *cyan_red_transfer[3];
 	double  *magenta_green_transfer[3];
 	double  *yellow_blue_transfer[3];
@@ -68,7 +68,7 @@ void BalanceColor(TiBitmapData& bitmap,int cyan, int magenta, int yellow,
 	u8 r_lookup[256],g_lookup[256],b_lookup[256];
 
 
-	//ÉèÖÃ×ª»»Êı×é
+	//è®¾ç½®è½¬æ¢æ•°ç»„
 	cyan_red_transfer[TINYIMAGE_TRANSFERMODE_SHADOWS] = (cyan_red[TINYIMAGE_TRANSFERMODE_SHADOWS] > 0) ? shadows_add : shadows_sub;
 	cyan_red_transfer[TINYIMAGE_TRANSFERMODE_MIDTONES] = (cyan_red[TINYIMAGE_TRANSFERMODE_MIDTONES] > 0) ? midtones_add : midtones_sub;
 	cyan_red_transfer[TINYIMAGE_TRANSFERMODE_HIGHLIGHTS] = (cyan_red[TINYIMAGE_TRANSFERMODE_HIGHLIGHTS] > 0) ? highlights_add : highlights_sub;
@@ -108,7 +108,7 @@ void BalanceColor(TiBitmapData& bitmap,int cyan, int magenta, int yellow,
 
 	}
 
-	//Èç¹û²»ĞèÒª±£Ö¤ÁÁ¶È²»±ä»¯£¬Ö±½Ó¸³Öµ¾Í¿ÉÒÔÁË
+	//å¦‚æœä¸éœ€è¦ä¿è¯äº®åº¦ä¸å˜åŒ–ï¼Œç›´æ¥èµ‹å€¼å°±å¯ä»¥äº†
 	if (!preserveLuminosity)
 	{
 		AdjustCurve(bitmap,r_lookup,g_lookup,b_lookup);

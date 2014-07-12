@@ -1,4 +1,4 @@
-#include "base/Curve.h"
+﻿#include "base/Curve.h"
 #include "filter/Invert.h"
 namespace TinyImage{
 

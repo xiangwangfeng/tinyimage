@@ -1,9 +1,9 @@
-#include "ColorType.h"
+ï»¿#include "ColorType.h"
 #include "ColorSpace.h"
 
 namespace TinyImage{
 
-//HSL×ªRGBÖĞ¼ä¼ÆËãº¯Êı
+//HSLè½¬RGBä¸­é—´è®¡ç®—å‡½æ•°
 static int hslValueInt(double n1, double n2, double hue) {
 	double value;
 
@@ -38,7 +38,7 @@ static int hslValueInt(double n1, double n2, double hue) {
 
 
 
-//RGB×ªHSL
+//RGBè½¬HSL
 void Rgb2Hsl(const TinyRGB *rgb, TinyHSL *hsl) 
 {
 
@@ -114,7 +114,7 @@ void Rgb2Hsl(const TinyRGB *rgb, TinyHSL *hsl)
 	hsl->m_saturation = s / 255.0;
 }
 
-//RGB×ªHSL£¬Ö»»ñÈ¡L
+//RGBè½¬HSLï¼Œåªè·å–L
 int Rgb2Hsl_L(u8 red,u8 green,u8 blue)
 {
 	int min, max;
@@ -134,7 +134,7 @@ int Rgb2Hsl_L(u8 red,u8 green,u8 blue)
 }
 
 
-//RGB×ªHSL
+//RGBè½¬HSL
 void Hsl2Rgb(const TinyHSL *hsl, TinyRGB *rgb) 
 {
 
@@ -179,8 +179,8 @@ void Hsl2Rgb(const TinyHSL *hsl, TinyRGB *rgb)
 }
 
 
-//RGB×ªHSL ²ÎÊı¶¼ÊÇ[int,out]ÀàĞÍ
-//R·µ»ØHue [0,360]£¬G·µ»ØSaturation[0,255]£¬B·µ»ØLightness[0,255]
+//RGBè½¬HSL å‚æ•°éƒ½æ˜¯[int,out]ç±»å‹
+//Rè¿”å›Hue [0,360]ï¼ŒGè¿”å›Saturation[0,255]ï¼ŒBè¿”å›Lightness[0,255]
 void Rgb2Hsl_Int (int& red,int& green, int& blue)
 {
 	int    r, g, b;
@@ -239,8 +239,8 @@ void Rgb2Hsl_Int (int& red,int& green, int& blue)
 	blue  = (int)ROUND (l);
 }
 
-//HSL×ªRGB ²ÎÊı¶¼ÊÇ[int,out]ÀàĞÍ
-//hue·µ»ØR £¬saturation·µ»ØG£¬lightness·µ»ØB
+//HSLè½¬RGB å‚æ•°éƒ½æ˜¯[int,out]ç±»å‹
+//hueè¿”å›R ï¼Œsaturationè¿”å›Gï¼Œlightnessè¿”å›B
 void Hsl2Rgb_Int (int& hue,int& saturation,int& lightness)
 {
 	double h, s, l;

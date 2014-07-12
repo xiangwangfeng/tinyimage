@@ -1,4 +1,4 @@
-#include "filter/Sketch.h"
+ï»¿#include "filter/Sketch.h"
 #include "filter/Grayscale.h"
 #include "filter/GaussBlur.h"
 #include "filter/Invert.h"
@@ -10,19 +10,19 @@ namespace TinyImage{
 
 void	Sketch(TiBitmapData& bitmap)
 {
-	//»Ò¶È»¯Ô­Í¼
+	//ç°åº¦åŒ–åŸå›¾
 	GrayScale(bitmap);
 
-	//¿½±´»Ò¶È»¯ºóµÄÔ­Í¼²¢·´Ïò
+	//æ‹·è´ç°åº¦åŒ–åçš„åŸå›¾å¹¶åå‘
 	TiBitmapData* clone = bitmap.Clone();
 	Invert(*clone);
 
-	//¶Ô¿½±´Í¼×ö¸ßË¹Ä£ºı
+	//å¯¹æ‹·è´å›¾åšé«˜æ–¯æ¨¡ç³Š
 	GaussianBlur(*clone,22);
 
 
 
-	//ÑÕÉ«¼õµ­
+	//é¢œè‰²å‡æ·¡
 	BlendMode(bitmap,TINYIMAGE_CHANEL_RGB,*clone,TINYIMAGE_CHANEL_RGB,
 			  TINYIMAGE_BLENDMODE_COLORDODGE,1.0);
 

@@ -1,4 +1,4 @@
-#include "base/Levels.h"
+ï»¿#include "base/Levels.h"
 #include "base/Curve.h"
 #include <cmath>
 
@@ -12,19 +12,19 @@ void	AdjustLevels(TiBitmapData& bitmap,int blackThreshold,int whiteThreshold,dou
 	TINYIMAGE_ASSERT_VOID(gamma >= 0.0 && gamma <= 10.0);
 
 	u8 lookup[256] = {0};
-	//Ð¡ÓÚºÚ³¡ãÐÖµ¶¼Éè³É0 
+	//å°äºŽé»‘åœºé˜ˆå€¼éƒ½è®¾æˆ0 
 	for (int i = 0; i < blackThreshold; i ++)
 	{
 		lookup[i] = 0;
 	}
-	//ÖÐ¼ä²¿·Ö×ögammaÐ£Õý
+	//ä¸­é—´éƒ¨åˆ†åšgammaæ ¡æ­£
 	double ig = (gamma == 0.0) ? 0.0 : 1 / gamma;
 	double threshold = (double)(whiteThreshold - blackThreshold);
 	for (int i = blackThreshold; i < whiteThreshold; i++)
 	{
 		lookup[i] = (u8)CLAMP0255( pow((i-blackThreshold)/threshold,ig)*255);
 	}
-	//´óÓÚ°×³¡ãÐÖµ¶¼ÉèÎª255
+	//å¤§äºŽç™½åœºé˜ˆå€¼éƒ½è®¾ä¸º255
 	for (int i = whiteThreshold; i < 256; i++)
 	{
 		lookup[i] = 255;

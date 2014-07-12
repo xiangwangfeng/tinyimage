@@ -1,6 +1,6 @@
-/**
+ï»¿/**
  * @file    TinyImage.h
- * @brief   µ¼³ö·½·¨¼¯
+ * @brief   å¯¼å‡ºæ–¹æ³•é›†
  * @author  xiangwangfeng <xiangwangfeng@gmail.com>
  * @since   2010-12
  * @website www.xiangwangfeng.com
@@ -19,27 +19,27 @@ struct TiHistogram;
 
 TINY_IMAGE_API TiHistogram*	GetImageHistogram(void* buf,int width,int height,int stride,int bpp);
 
-/****************************ÑÕÉ«Ïà¹Øµ÷Õû**************************/
+/****************************é¢œè‰²ç›¸å…³è°ƒæ•´**************************/
 TINY_IMAGE_API void	AdjustBrightness(void* buf,int width,int height,int stride,int bpp,double level);
 TINY_IMAGE_API void	AdjustContrast(void* buf,int width,int height,int stride,int bpp,double level);
 TINY_IMAGE_API void	AdjustHueSaturation(void* buf,int width,int height,int stride,int bpp,int hue,int saturation,int lightness,TINYIMAGE_HUERANGE hueRange);
 TINY_IMAGE_API void	AdjustLevels(void* buf,int width,int height,int stride,int bpp,int blackThreshold,int whiteThreshold,double gamma,TINYIMAGE_CHANNEL channel);
 TINY_IMAGE_API void BalanceColor(void* buf,int width,int height,int stride,int bpp,int cyan, int magenta, int yellow,TINYIMAGE_TRANSFERMODE mode,bool preserveLuminosity);
 
-/****************************Í¼Æ¬»ìºÏ**************************/
+/****************************å›¾ç‰‡æ··åˆ**************************/
 TINY_IMAGE_API void BlendMode(void* buf,int width,int height,int stride,int bpp,TINYIMAGE_CHANNEL srcChannel,
 							  void* blendBuf,int blendWidth,int blendHeight,int blendStride,int blendBpp,TINYIMAGE_CHANNEL blendChannel,
 							  TINYIMAGE_BLENDMODE mode,double opacity);
 
 
-/****************************ÂË¾µ(Ò»¼üĞ§¹û)**************************/
-TINY_IMAGE_API void GrayScale(void* buf,int width,int height,int stride,int bpp);	//»Ò¶È»¯
-TINY_IMAGE_API void OldPhoto(void* buf,int width,int height,int stride,int bpp);	//ÀÏÕÕÆ¬
+/****************************æ»¤é•œ(ä¸€é”®æ•ˆæœ)**************************/
+TINY_IMAGE_API void GrayScale(void* buf,int width,int height,int stride,int bpp);	//ç°åº¦åŒ–
+TINY_IMAGE_API void OldPhoto(void* buf,int width,int height,int stride,int bpp);	//è€ç…§ç‰‡
 TINY_IMAGE_API void Lomo(void* buf,int width,int height,int stride,int bpp);		//Lomo
-TINY_IMAGE_API void Sketch(void* buf,int width,int height,int stride,int bpp);		//ËØÃè
-TINY_IMAGE_API void Invert(void* buf,int width,int height,int stride,int bpp);		//·´Ïà
-TINY_IMAGE_API void NegativeFilm(void* buf,int width,int height,int stride,int bpp);//·´×ª¸º³å
-TINY_IMAGE_API void SoftGlow(void* buf,int width,int height,int stride,int bpp);	//Èá¹â
+TINY_IMAGE_API void Sketch(void* buf,int width,int height,int stride,int bpp);		//ç´ æ
+TINY_IMAGE_API void Invert(void* buf,int width,int height,int stride,int bpp);		//åç›¸
+TINY_IMAGE_API void NegativeFilm(void* buf,int width,int height,int stride,int bpp);//åè½¬è´Ÿå†²
+TINY_IMAGE_API void SoftGlow(void* buf,int width,int height,int stride,int bpp);	//æŸ”å…‰
 
 
 }

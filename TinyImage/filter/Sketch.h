@@ -1,6 +1,6 @@
-/**
+ï»¿/**
  * @file    Sketch.h
- * @brief   ËØÃè
+ * @brief   ç´ æ
  * @author  xiangwangfeng <xiangwangfeng@gmail.com>
  * @since   2011-1
  * @website www.xiangwangfeng.com
@@ -11,7 +11,7 @@
 
 namespace TinyImage{
 
-//ËØÃè
+//ç´ æ
 void	Sketch(TiBitmapData& bitmap);
 	
 }

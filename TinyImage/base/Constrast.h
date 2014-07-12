@@ -1,6 +1,6 @@
-/**
+ï»¿/**
  * @file    Constrast.h
- * @brief   ¶Ô±È¶Èµ÷Õû
+ * @brief   å¯¹æ¯”åº¦è°ƒæ•´
  * @author  xiangwangfeng <xiangwangfeng@gmail.com>
  * @since   2010-12
  * @website www.xiangwangfeng.com
@@ -10,13 +10,13 @@
 #include "global/BitmapData.h"
 namespace TinyImage{
 
-//¶Ô±È¶Èµ÷Õû
+//å¯¹æ¯”åº¦è°ƒæ•´
 void	AdjustContrast(TiBitmapData& bitmap,double level);	
 
-//Ê¹ÓÃãĞÖµ½øĞĞµ÷Õû
+//ä½¿ç”¨é˜ˆå€¼è¿›è¡Œè°ƒæ•´
 void	AdjustContrastUsingConstThreshold(TiBitmapData& bitmap,double level);
 
-//Ê¹ÓÃÆ½¾ùÖµ½øĞĞµ÷Õû
+//ä½¿ç”¨å¹³å‡å€¼è¿›è¡Œè°ƒæ•´
 void	AdjustContrastUsingAverageThreshold(TiBitmapData& bitmap,double level);
 
 }

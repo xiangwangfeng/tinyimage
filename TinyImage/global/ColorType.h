@@ -1,6 +1,6 @@
-/**
+ï»¿/**
  * @file    ColorType.h
- * @brief   ÑÕÉ«ÀàĞÍ
+ * @brief   é¢œè‰²ç±»å‹
  * @author  xiangwangfeng <xiangwangfeng@gmail.com>
  * @since   2010-12
  * @website www.xiangwangfeng.com
@@ -12,7 +12,7 @@
 
 namespace TinyImage{
 
-//»Ò¶È×ª»»Òò×Ó
+//ç°åº¦è½¬æ¢å› å­
 const double RGB_LUMINANCE_RED = 0.2126;
 const double RGB_LUMINANCE_GREEN = 0.7152;
 const double RGB_LUMINANCE_BLUE = 0.0722;
@@ -32,16 +32,16 @@ public:
 	{
 		
 	}
-	//µÃµ½»Ò¶ÈÖµ
+	//å¾—åˆ°ç°åº¦å€¼
 	u8 getLuminance() const {
 		u8 luminance = (u8)ROUND(RGB_LUMINANCE(m_red, m_green, m_blue));
 		return CLAMP0255(luminance);
 	}
 
-	u8 m_blue;	//À¶É«
-	u8 m_green;	//ÂÌÉ«
-	u8 m_red;	//ºìÉ«
-	u8 m_alpha;	//AlphaÍ¨µÀ
+	u8 m_blue;	//è“è‰²
+	u8 m_green;	//ç»¿è‰²
+	u8 m_red;	//çº¢è‰²
+	u8 m_alpha;	//Alphaé€šé“
 };
 
 //RGB
@@ -54,24 +54,24 @@ struct TinyRGB
 			m_green= green;
 			m_red = red;
 		}
-		//µÃµ½»Ò¶ÈÖµ	
+		//å¾—åˆ°ç°åº¦å€¼	
 		u8 getLuminance() const {
 			u8 luminance = (u8)ROUND(RGB_LUMINANCE(m_red, m_green, m_blue));
 			return CLAMP0255(luminance);
 		}
 
-		u8 m_blue;	/** À¶ */
-		u8 m_green;	/** ÂÌ */
-		u8 m_red;	/** ºì */
+		u8 m_blue;	/** è“ */
+		u8 m_green;	/** ç»¿ */
+		u8 m_red;	/** çº¢ */
 };
 
 
 //HSL
 struct TinyHSL 
 {
-	int m_hue;				//É«Ïà   [0,360]
-	double m_saturation;	//±¥ºÍ¶È [0,1]
-	double m_lightness;		//ÁÁ¶È   [0,1]
+	int m_hue;				//è‰²ç›¸   [0,360]
+	double m_saturation;	//é¥±å’Œåº¦ [0,1]
+	double m_lightness;		//äº®åº¦   [0,1]
 };
 
 }

@@ -1,4 +1,4 @@
-#include "base/Constrast.h"
+ï»¿#include "base/Constrast.h"
 #include "base/Curve.h"
 
 #define CONSTTHRESHOLD 
@@ -22,7 +22,7 @@ void	AdjustContrastUsingConstThreshold(TiBitmapData& bitmap,double level)
 	
 	u8 lookup[256];
 	double delta		= 1 + level;
-	const int threshold = 0x7F;//128 ¿ÉÒÔÈÏÎªÊÇÆ½¾ùÁÁ¶È
+	const int threshold = 0x7F;//128 å¯ä»¥è®¤ä¸ºæ˜¯å¹³å‡äº®åº¦
 	
 	for (int i = 0; i < 256; i++)
 	{

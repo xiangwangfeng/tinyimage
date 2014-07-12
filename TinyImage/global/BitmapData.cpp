@@ -1,4 +1,4 @@
-#include "BitmapData.h"
+﻿#include "BitmapData.h"
 #include <cstring>
 
 namespace TinyImage{

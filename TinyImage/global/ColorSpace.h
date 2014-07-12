@@ -1,6 +1,6 @@
-/**
+ï»¿/**
  * @file    ColorSpace.h
- * @brief   É«²Ê¿Õ¼ä
+ * @brief   è‰²å½©ç©ºé—´
  * @author  xiangwangfeng <xiangwangfeng@gmail.com>
  * @since   2010-12
  * @website www.xiangwangfeng.com
@@ -13,23 +13,23 @@ struct TinyRGBA;
 struct TinyRGB;
 struct TinyHSL;
 /************************************************************************/
-/*                   ÑÕÉ«¿Õ¼ä×ª»»º¯Êı                                   */
+/*                   é¢œè‰²ç©ºé—´è½¬æ¢å‡½æ•°                                   */
 /************************************************************************/
 
-//RGB×ªHSL
+//RGBè½¬HSL
 void Rgb2Hsl(const TinyRGB *rgb, TinyHSL *hsl);
 
-//HSL×ª»»RGB
+//HSLè½¬æ¢RGB
 void Hsl2Rgb(const TinyHSL *hsl, TinyRGB *rgb);
 
-//RGB×ªHSL£¬Ö»»ñÈ¡L
+//RGBè½¬HSLï¼Œåªè·å–L
 int Rgb2Hsl_L(u8 red,u8 green,u8 blue);
 
 
-//RGB×ªHSL int(¼õÉÙÁË×îºóÒ»²½³ı·¨ÔËËã)
+//RGBè½¬HSL int(å‡å°‘äº†æœ€åä¸€æ­¥é™¤æ³•è¿ç®—)
 void Rgb2Hsl_Int (int& red, int& green,int& blue);
 
-//HSL×ªRGB int
+//HSLè½¬RGB int
 void Hsl2Rgb_Int (int& hue,int& saturation,int& lightness);
 
 }

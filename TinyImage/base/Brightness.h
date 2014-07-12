@@ -1,6 +1,6 @@
-/**
+ï»¿/**
  * @file    Brightness.h
- * @brief   ÁÁ¶Èµ÷Õû
+ * @brief   äº®åº¦è°ƒæ•´
  * @author  xiangwangfeng <xiangwangfeng@gmail.com>
  * @since   2010-12
  * @website www.xiangwangfeng.com

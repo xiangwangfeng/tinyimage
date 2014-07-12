@@ -1,6 +1,6 @@
-/**
+ï»¿/**
  * @file    NormalBlend.h
- * @brief   ÈÚºÏ......
+ * @brief   èåˆ......
  * @author  xiangwangfeng <xiangwangfeng@gmail.com>
  * @since   2010-12
  * @website www.xiangwangfeng.com
@@ -17,7 +17,7 @@ struct TinyRGBA;
 struct TinyRGB;
 
 u8		FastScaleByteByByte(u8 a, u8 b);
-void	Blend(const TinyRGB* bgColor,u8 bgColorAlpha, const TinyRGBA* fgColor, TinyRGB* dstColor, u8 coverAlpha);//ÈÚºÏ
-void	BlendLayerMask(TiBitmapData& bitmap, TinyRGBA *mask,int maskX, int maskY,  int maskWidth, int maskHeight, u8 maskAlpha ); //ÆÕÍ¨ÈÚºÏÃÉ²ã
+void	Blend(const TinyRGB* bgColor,u8 bgColorAlpha, const TinyRGBA* fgColor, TinyRGB* dstColor, u8 coverAlpha);//èåˆ
+void	BlendLayerMask(TiBitmapData& bitmap, TinyRGBA *mask,int maskX, int maskY,  int maskWidth, int maskHeight, u8 maskAlpha ); //æ™®é€šèåˆè’™å±‚
 
 }

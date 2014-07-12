@@ -1,6 +1,6 @@
-/**
+ï»¿/**
  * @file    HueSaturation.h
- * @brief   É«Ïà/±¥ºÍ¶È
+ * @brief   è‰²ç›¸/é¥±å’Œåº¦
  * @author  xiangwangfeng <xiangwangfeng@gmail.com>
  * @since   2011-1
  * @website www.xiangwangfeng.com
@@ -45,7 +45,7 @@ struct HueSaturationParam
 void	AdjustHueSaturation(TiBitmapData& bitmap,int hue,int saturation,int lightness,
 							TINYIMAGE_HUERANGE hueRange);
 
-//Ë½ÓĞ·½·¨
+//ç§æœ‰æ–¹æ³•
 void	CalculateTransfer(HueSaturation& hs,const HueSaturationParam& param);
 void	AdjustHueSaturation(TiBitmapData& bitmap,const HueSaturation& hs);
 }

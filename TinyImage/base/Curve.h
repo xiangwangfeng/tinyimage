@@ -1,6 +1,6 @@
-/**
+ï»¿/**
  * @file    Curve.h
- * @brief   ÇúÏßµ÷Õû
+ * @brief   æ›²çº¿è°ƒæ•´
  * @author  xiangwangfeng <xiangwangfeng@gmail.com>
  * @since   2010-12
  * @website www.xiangwangfeng.com
@@ -13,8 +13,8 @@
 namespace TinyImage{
 
 
-void	AdjustCurve(TiBitmapData& bitmap,u8 (&lookup)[256],TINYIMAGE_CHANNEL channel);						//µ¥LookupTableÇúÏßµ÷Õû
-void	AdjustCurve(TiBitmapData& bitmap,u8 (&r_lookup)[256],u8 (&g_lookup)[256],u8 (&b_lookup)[256]);//ÈıÍ¨µÀÇúÏßµ÷Õû
-void	PreserveLuminosityAdjustCurve(TiBitmapData& bitmap,u8 (&r_lookup)[256],u8 (&g_lookup)[256],u8 (&b_lookup)[256]);//±£Ö¤ÏñËØµãÁÁ¶È²»±äµÄÇúÏßµ÷Õû
+void	AdjustCurve(TiBitmapData& bitmap,u8 (&lookup)[256],TINYIMAGE_CHANNEL channel);						//å•LookupTableæ›²çº¿è°ƒæ•´
+void	AdjustCurve(TiBitmapData& bitmap,u8 (&r_lookup)[256],u8 (&g_lookup)[256],u8 (&b_lookup)[256]);//ä¸‰é€šé“æ›²çº¿è°ƒæ•´
+void	PreserveLuminosityAdjustCurve(TiBitmapData& bitmap,u8 (&r_lookup)[256],u8 (&g_lookup)[256],u8 (&b_lookup)[256]);//ä¿è¯åƒç´ ç‚¹äº®åº¦ä¸å˜çš„æ›²çº¿è°ƒæ•´
 
 }

@@ -1,6 +1,6 @@
-/**
+﻿/**
  * @file    Histogram.h
- * @brief   ֱ��ͼ
+ * @brief   直方图
  * @author  xiangwangfeng <xiangwangfeng@gmail.com>
  * @since   2011-1
  * @website www.xiangwangfeng.com

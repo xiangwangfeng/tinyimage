@@ -1,4 +1,4 @@
-#include "base/Brightness.h"
+﻿#include "base/Brightness.h"
 #include "base/Curve.h"
 #include <cmath>
 

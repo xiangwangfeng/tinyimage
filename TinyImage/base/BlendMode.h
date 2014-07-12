@@ -1,6 +1,6 @@
-/**
+ï»¿/**
  * @file    BlendMode.h
- * @brief   Í¼²ã»ìºÏ
+ * @brief   å›¾å±‚æ··åˆ
  * @author  xiangwangfeng <xiangwangfeng@gmail.com>
  * @since   2011-02
  * @website www.xiangwangfeng.com
@@ -12,41 +12,41 @@
 
 namespace TinyImage{
 
-//Í¼²ã»ìºÏ
+//å›¾å±‚æ··åˆ
 void	BlendMode(TiBitmapData& srcBitmap,TINYIMAGE_CHANNEL srcChannel,
 				  TiBitmapData& blendBitmap,TINYIMAGE_CHANNEL blendChannel,
 				  TINYIMAGE_BLENDMODE mode,double opacity);
 
-//Éú³ÉLookupTable
+//ç”ŸæˆLookupTable
 void	GenerateLookupTable(u8 (&lookup)[256][256],TINYIMAGE_BLENDMODE mode,double opacity);
 
-//»ìºÏÇúÏßµ÷Õû
+//æ··åˆæ›²çº¿è°ƒæ•´
 void	AdjustBlendModeCurve(TiBitmapData& srcBitmap,TINYIMAGE_CHANNEL srcChannel,
 							 TiBitmapData& blendBitmap,TINYIMAGE_CHANNEL blendChannel,
 							 u8 (&lookup)[256][256]);
-//intºÍChannel×ª»»
+//intå’ŒChannelè½¬æ¢
 int		ConvertRGBIndex(TINYIMAGE_CHANNEL channel);	
 
 //GLT = Generate Lookup Table
-//Éú³É¸÷×ÔÍ¼²ã»ìºÏĞèÒªµÄLookup Table
-void	GLT_Darken(u8 (&lookup)[256][256],double opacity);			//±ä°µ
-void	GLT_Lighten(u8 (&lookup)[256][256],double opacity);			//±äÁÁ
-void	GLT_Multiply(u8 (&lookup)[256][256],double opacity);		//ÕıÆ¬µşµ×
-void	GLT_Screen(u8 (&lookup)[256][256],double opacity);			//ÂËÉ«
-void	GLT_ColorDodge(u8 (&lookup)[256][256],double opacity);		//É«²Ê¼õµ­
-void	GLT_ColorBurn(u8 (&lookup)[256][256],double opacity);		//É«²Ê¼ÓÉî
-void	GLT_LinearDodge(u8 (&lookup)[256][256],double opacity);		//ÏßĞÔ¼õµ­
-void	GLT_LinearBurn(u8 (&lookup)[256][256],double opacity);		//ÏßĞÔ¼ÓÉî
-void	GLT_Overlay(u8 (&lookup)[256][256],double opacity);			//µş¼Ó
-void	GLT_HardLight(u8 (&lookup)[256][256],double opacity);		//Ç¿¹â
-void	GLT_SoftLight(u8 (&lookup)[256][256],double opacity);		//Èá¹â
-void	GLT_VividLight(u8 (&lookup)[256][256],double opacity);		//ÁÁ¹â
-void	GLT_LinearLight(u8 (&lookup)[256][256],double opacity);		//ÏßĞÔ¹â
-void	GLT_PinLight(u8 (&lookup)[256][256],double opacity);		//µã¹â
-void	GLT_HardMix(u8 (&lookup)[256][256],double opacity);			//ÊµÉ«»ìºÏ
-void	GLT_Add(u8 (&lookup)[256][256],double opacity);				//Ïà¼Ó
-void	GLT_Sub(u8 (&lookup)[256][256],double opacity);				//Ïà¼õ
-void	GLT_Difference(u8 (&lookup)[256][256],double opacity);		//²îÖµ
-void	GLT_Exclusion(u8 (&lookup)[256][256],double opacity);		//ÅÅ³ı
+//ç”Ÿæˆå„è‡ªå›¾å±‚æ··åˆéœ€è¦çš„Lookup Table
+void	GLT_Darken(u8 (&lookup)[256][256],double opacity);			//å˜æš—
+void	GLT_Lighten(u8 (&lookup)[256][256],double opacity);			//å˜äº®
+void	GLT_Multiply(u8 (&lookup)[256][256],double opacity);		//æ­£ç‰‡å åº•
+void	GLT_Screen(u8 (&lookup)[256][256],double opacity);			//æ»¤è‰²
+void	GLT_ColorDodge(u8 (&lookup)[256][256],double opacity);		//è‰²å½©å‡æ·¡
+void	GLT_ColorBurn(u8 (&lookup)[256][256],double opacity);		//è‰²å½©åŠ æ·±
+void	GLT_LinearDodge(u8 (&lookup)[256][256],double opacity);		//çº¿æ€§å‡æ·¡
+void	GLT_LinearBurn(u8 (&lookup)[256][256],double opacity);		//çº¿æ€§åŠ æ·±
+void	GLT_Overlay(u8 (&lookup)[256][256],double opacity);			//å åŠ 
+void	GLT_HardLight(u8 (&lookup)[256][256],double opacity);		//å¼ºå…‰
+void	GLT_SoftLight(u8 (&lookup)[256][256],double opacity);		//æŸ”å…‰
+void	GLT_VividLight(u8 (&lookup)[256][256],double opacity);		//äº®å…‰
+void	GLT_LinearLight(u8 (&lookup)[256][256],double opacity);		//çº¿æ€§å…‰
+void	GLT_PinLight(u8 (&lookup)[256][256],double opacity);		//ç‚¹å…‰
+void	GLT_HardMix(u8 (&lookup)[256][256],double opacity);			//å®è‰²æ··åˆ
+void	GLT_Add(u8 (&lookup)[256][256],double opacity);				//ç›¸åŠ 
+void	GLT_Sub(u8 (&lookup)[256][256],double opacity);				//ç›¸å‡
+void	GLT_Difference(u8 (&lookup)[256][256],double opacity);		//å·®å€¼
+void	GLT_Exclusion(u8 (&lookup)[256][256],double opacity);		//æ’é™¤
 
 }

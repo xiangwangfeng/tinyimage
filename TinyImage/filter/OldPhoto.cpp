@@ -1,4 +1,4 @@
-#include "filter/Grayscale.h"
+ï»¿#include "filter/Grayscale.h"
 #include "base/ColorBalance.h"
 
 
@@ -6,10 +6,10 @@ namespace TinyImage{
 
 void	OldPhoto(TiBitmapData& bitmap)
 {
-	//»Ò¶È»¯
+	//ç°åº¦åŒ–
 	GrayScale(bitmap);
 
-	//Ìí¼ÓºìÉ«Í¨µÀ ¼õÉÙÀ¶É«Í¨µÀ Ê¹µÃÍ¼Æ¬·º»Æ
+	//æ·»åŠ çº¢è‰²é€šé“ å‡å°‘è“è‰²é€šé“ ä½¿å¾—å›¾ç‰‡æ³›é»„
 	BalanceColor(bitmap,34,0,-87,TINYIMAGE_TRANSFERMODE_MIDTONES,false);
 	
 }

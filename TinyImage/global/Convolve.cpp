@@ -1,4 +1,4 @@
-#include "global/Convolve.h"
+﻿#include "global/Convolve.h"
 #include <cmath>
 #include <cstring>
 

@@ -1,6 +1,6 @@
-/**
+ï»¿/**
  * @file    ColorBalance.h
- * @brief   É«²ÊÆ½ºâ
+ * @brief   è‰²å½©å¹³è¡¡
  * @author  xiangwangfeng <xiangwangfeng@gmail.com>
  * @since   2011-1
  * @website www.xiangwangfeng.com
@@ -12,11 +12,11 @@
 
 namespace TinyImage{
 
-//¹«¹²·½·¨
+//å…¬å…±æ–¹æ³•
 void BalanceColor(TiBitmapData& bitmap,int cyan, int magenta, int yellow,
 		TINYIMAGE_TRANSFERMODE mode,bool preserveLuminosity);
 
-//Ë½ÓĞ·½·¨
-void InitTransferArray();//³õÊ¼»¯×ª»»ÓÃÊı×é
+//ç§æœ‰æ–¹æ³•
+void InitTransferArray();//åˆå§‹åŒ–è½¬æ¢ç”¨æ•°ç»„
 
 }

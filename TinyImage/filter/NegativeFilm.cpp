@@ -1,4 +1,4 @@
-#include "base/BlendMode.h"
+﻿#include "base/BlendMode.h"
 #include "filter/Invert.h"
 #include "filter/NegativeFilm.h"
 

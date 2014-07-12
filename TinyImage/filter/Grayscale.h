@@ -1,6 +1,6 @@
-/**
+﻿/**
  * @file    Grayscale.h
- * @brief   �ҶȻ�
+ * @brief   灰度化
  * @author  xiangwangfeng <xiangwangfeng@gmail.com>
  * @since   2011-1
  * @website www.xiangwangfeng.com

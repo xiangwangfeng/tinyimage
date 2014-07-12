@@ -1,6 +1,6 @@
-/**
+ï»¿/**
  * @file    Levels.h
- * @brief   É«½×µ÷Õû
+ * @brief   è‰²é˜¶è°ƒæ•´
  * @author  xiangwangfeng <xiangwangfeng@gmail.com>
  * @since   2010-12
  * @website www.xiangwangfeng.com
@@ -12,6 +12,6 @@
 #include "GlobalData.h"
 namespace TinyImage{
 													
-void	AdjustLevels(TiBitmapData& bitmap,int blackThreshold,int whiteThreshold,double gamma,TINYIMAGE_CHANNEL channel);//É«½×µ÷Õû
+void	AdjustLevels(TiBitmapData& bitmap,int blackThreshold,int whiteThreshold,double gamma,TINYIMAGE_CHANNEL channel);//è‰²é˜¶è°ƒæ•´
 
 }

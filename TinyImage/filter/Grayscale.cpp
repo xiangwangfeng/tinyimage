@@ -1,4 +1,4 @@
-#include "filter/Grayscale.h"
+﻿#include "filter/Grayscale.h"
 #include "global/ColorType.h"
 
 namespace TinyImage{

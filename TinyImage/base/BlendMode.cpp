@@ -1,4 +1,4 @@
-#include "base/BlendMode.h"
+ï»¿#include "base/BlendMode.h"
 #include <cmath>
 
 namespace TinyImage{
@@ -19,18 +19,18 @@ void	BlendMode(TiBitmapData& srcBitmap,TINYIMAGE_CHANNEL srcChannel,
 	TINYIMAGE_ASSERT_VOID(bpp == blendBpp);
 	TINYIMAGE_ASSERT_VOID(opacity >= 0 && opacity <= 1.0);
 
-	//¹¹ÔìLookup Table
+	//æž„é€ Lookup Table
 	u8 lookupTable[256][256];
 	GenerateLookupTable(lookupTable,mode,opacity);
 
-	//½øÐÐµ÷Õû
+	//è¿›è¡Œè°ƒæ•´
 	AdjustBlendModeCurve(srcBitmap,srcChannel,blendBitmap,blendChannel,lookupTable);
 }
 
 
 void	GenerateLookupTable(u8 (&lookup)[256][256],TINYIMAGE_BLENDMODE mode,double opacity)
 {
-	//³õÊ¼»¯LookupTableÄ¬ÈÏÖµ
+	//åˆå§‹åŒ–LookupTableé»˜è®¤å€¼
 	for (int i = 0; i < 256; i++)
 	{
 		for (int j = 0 ; j < 256; j++)
@@ -152,7 +152,7 @@ void	AdjustBlendModeCurve(TiBitmapData& srcBitmap,TINYIMAGE_CHANNEL srcChannel,
 
 	if (srcChannel == TINYIMAGE_CHANEL_RGB ||blendChannel == TINYIMAGE_CHANEL_RGB)
 	{
-		if (srcChannel == TINYIMAGE_CHANEL_RGB && blendChannel == TINYIMAGE_CHANEL_RGB)	//Èç¹ûÁ½¸ö¶¼ÊÇÈ«Í¨µÀ
+		if (srcChannel == TINYIMAGE_CHANEL_RGB && blendChannel == TINYIMAGE_CHANEL_RGB)	//å¦‚æžœä¸¤ä¸ªéƒ½æ˜¯å…¨é€šé“
 		{
 			for (int i = 0; i < height; i ++)
 			{
@@ -168,7 +168,7 @@ void	AdjustBlendModeCurve(TiBitmapData& srcBitmap,TINYIMAGE_CHANNEL srcChannel,
 				blendBmp+= offset;
 			}
 		}
-		else if (srcChannel == TINYIMAGE_CHANEL_RGB)	//Èç¹ûÖ»ÓÐµ×Í¼ÊÇÈ«Í¨µÀ
+		else if (srcChannel == TINYIMAGE_CHANEL_RGB)	//å¦‚æžœåªæœ‰åº•å›¾æ˜¯å…¨é€šé“
 		{
 			int blendPixel	= ConvertRGBIndex(blendChannel);
 
@@ -188,7 +188,7 @@ void	AdjustBlendModeCurve(TiBitmapData& srcBitmap,TINYIMAGE_CHANNEL srcChannel,
 			}
 			
 		}
-		else	//Èç¹ûÖ»ÓÐÉÏ²ãÍ¼²ãÊÇÈ«Í¨µÀ
+		else	//å¦‚æžœåªæœ‰ä¸Šå±‚å›¾å±‚æ˜¯å…¨é€šé“
 		{
 			int srcPixel	= ConvertRGBIndex(srcChannel);
 
@@ -209,7 +209,7 @@ void	AdjustBlendModeCurve(TiBitmapData& srcBitmap,TINYIMAGE_CHANNEL srcChannel,
 
 		}
 	}
-	else//Èç¹ûÁ½¸ö¶¼ÊÇµ¥Í¨µÀ 
+	else//å¦‚æžœä¸¤ä¸ªéƒ½æ˜¯å•é€šé“ 
 	{
 		int srcPixel	= ConvertRGBIndex(srcChannel);
 		int blendPixel	= ConvertRGBIndex(blendChannel);
@@ -231,7 +231,7 @@ void	AdjustBlendModeCurve(TiBitmapData& srcBitmap,TINYIMAGE_CHANNEL srcChannel,
 }
 
 
-//±ä°µ
+//å˜æš—
 void	GLT_Darken(u8 (&lookup)[256][256],double opacity)
 {
 	TINYIMAGE_ASSERT_VOID(opacity >= 0 && opacity <= 1.0);
@@ -245,7 +245,7 @@ void	GLT_Darken(u8 (&lookup)[256][256],double opacity)
 	}
 }
 
-//±äÁÁ
+//å˜äº®
 void	GLT_Lighten(u8 (&lookup)[256][256],double opacity)
 {
 	TINYIMAGE_ASSERT_VOID(opacity >= 0 && opacity <= 1.0);
@@ -259,7 +259,7 @@ void	GLT_Lighten(u8 (&lookup)[256][256],double opacity)
 	}
 }
 
-//ÕýÆ¬µþµ×
+//æ­£ç‰‡å åº•
 void	GLT_Multiply(u8 (&lookup)[256][256],double opacity)
 {
 	TINYIMAGE_ASSERT_VOID(opacity >= 0 && opacity <= 1.0);
@@ -273,7 +273,7 @@ void	GLT_Multiply(u8 (&lookup)[256][256],double opacity)
 	}
 }
 
-//ÂËÉ«
+//æ»¤è‰²
 void	GLT_Screen(u8 (&lookup)[256][256],double opacity)
 {
 	TINYIMAGE_ASSERT_VOID(opacity >= 0 && opacity <= 1.0);
@@ -287,7 +287,7 @@ void	GLT_Screen(u8 (&lookup)[256][256],double opacity)
 	}
 }
 
-//É«²Ê¼õµ­
+//è‰²å½©å‡æ·¡
 void	GLT_ColorDodge(u8 (&lookup)[256][256],double opacity)
 {
 	TINYIMAGE_ASSERT_VOID(opacity >= 0 && opacity <= 1.0);
@@ -306,7 +306,7 @@ void	GLT_ColorDodge(u8 (&lookup)[256][256],double opacity)
 	}
 }
 
-//É«²Ê¼ÓÉî
+//è‰²å½©åŠ æ·±
 void	GLT_ColorBurn(u8 (&lookup)[256][256],double opacity)
 {
 	TINYIMAGE_ASSERT_VOID(opacity >= 0 && opacity <= 1.0);
@@ -320,7 +320,7 @@ void	GLT_ColorBurn(u8 (&lookup)[256][256],double opacity)
 	}
 }
 
-//ÏßÐÔ¼õµ­
+//çº¿æ€§å‡æ·¡
 void	GLT_LinearDodge(u8 (&lookup)[256][256],double opacity)
 {
 	TINYIMAGE_ASSERT_VOID(opacity >= 0 && opacity <= 1.0);
@@ -334,7 +334,7 @@ void	GLT_LinearDodge(u8 (&lookup)[256][256],double opacity)
 	}
 }
 
-//ÏßÐÔ¼ÓÉî
+//çº¿æ€§åŠ æ·±
 void	GLT_LinearBurn(u8 (&lookup)[256][256],double opacity)
 {
 	TINYIMAGE_ASSERT_VOID(opacity >= 0 && opacity <= 1.0);
@@ -348,12 +348,12 @@ void	GLT_LinearBurn(u8 (&lookup)[256][256],double opacity)
 	}
 }
 
-//µþ¼Ó
+//å åŠ 
 void	GLT_Overlay(u8 (&lookup)[256][256],double opacity)
 {
 	TINYIMAGE_ASSERT_VOID(opacity >= 0 && opacity <= 1.0);
 
-	//Ð¡ÓÚµÈÓÚ 1/2
+	//å°äºŽç­‰äºŽ 1/2
 	for (int i = 0; i <= 128; i++)
 	{
 		for (int j = 0; j < 256; j++)
@@ -362,7 +362,7 @@ void	GLT_Overlay(u8 (&lookup)[256][256],double opacity)
 		}
 	}
 	
-	//´óÓÚ1/2
+	//å¤§äºŽ1/2
 	for (int i = 129; i < 256; i++)
 	{
 		for (int j = 0; j < 256; j++)
@@ -374,19 +374,19 @@ void	GLT_Overlay(u8 (&lookup)[256][256],double opacity)
 
 }
 
-//Ç¿¹â
+//å¼ºå…‰
 void	GLT_HardLight(u8 (&lookup)[256][256],double opacity)
 {
 	
 	for (int i = 0; i < 256; i++)
 	{
-		//Ð¡ÓÚµÈÓÚ 1/2
+		//å°äºŽç­‰äºŽ 1/2
 		for (int j = 0; j <= 128; j++)
 		{
 			lookup[i][j] = (u8)( i * (1-opacity) + 2 * i * j / 255.0 * opacity );
 		}
 
-		//´óÓÚ1/2
+		//å¤§äºŽ1/2
 		for (int j = 129; j < 256; j++)
 		{
 			lookup[i][j] = (u8)( i * (1-opacity) + ( 255 - 2 * (255 - i) * (255 - j) / 255 )* opacity );
@@ -396,21 +396,21 @@ void	GLT_HardLight(u8 (&lookup)[256][256],double opacity)
 
 }
 
-//Èá¹â
+//æŸ”å…‰
 void	GLT_SoftLight(u8 (&lookup)[256][256],double opacity)
 {
 	TINYIMAGE_ASSERT_VOID(opacity >= 0 && opacity <= 1.0);
 
 	for (int i = 0; i < 256; i++)
 	{
-		//Ð¡ÓÚµÈÓÚ 1/2
+		//å°äºŽç­‰äºŽ 1/2
 		for (int j = 0; j <= 128; j++)
 		{
 			double result = i + (2 * j / 255.0 - 1) * (i / 255.0 - i * i / 65025.0) * 255.0;
 			lookup[i][j] = (u8)( i * (1-opacity) + result * opacity );
 		}
 
-		//´óÓÚ1/2
+		//å¤§äºŽ1/2
 		for (int j = 129; j < 256; j++)
 		{
 			double result = i + ( 2 * j / 255.0 - 1) * (sqrt(i / 255.0) - i / 255.0) * 255.0;
@@ -419,32 +419,32 @@ void	GLT_SoftLight(u8 (&lookup)[256][256],double opacity)
 	}
 }
 
-//ÁÁ¹â
+//äº®å…‰
 void	GLT_VividLight(u8 (&lookup)[256][256],double opacity)
 {
 	TINYIMAGE_ASSERT_VOID(opacity >= 0 && opacity <= 1.0);
 
 	for (int i = 0; i < 256; i++)
 	{
-		//Ð¡ÓÚµÈÓÚ 1/2
+		//å°äºŽç­‰äºŽ 1/2
 		for (int j = 0; j <= 128; j++)
 		{
 			lookup[i][j] = (u8)( i * (1-opacity) + ( 255 - CLAMP0255(255.0* (1 - i / 255.0) /  (2 * j / 255.0)) ) * opacity );
 		}
 
-		//´óÓÚ1/2
+		//å¤§äºŽ1/2
 		for (int j = 129; j < 255; j++)
 		{
 			
 			lookup[i][j] = (u8)( i * (1-opacity) + CLAMP0255( 255 * i / (510 - 2 * j)) * opacity );
 		}
 
-		//ÌØÊâÖµ´¦Àí
+		//ç‰¹æ®Šå€¼å¤„ç†
 		lookup[i][255] = (u8)( i * (1-opacity) + 255 * opacity );
 	}
 }
 
-//ÏßÐÔ¹â
+//çº¿æ€§å…‰
 void	GLT_LinearLight(u8 (&lookup)[256][256],double opacity)
 {
 	TINYIMAGE_ASSERT_VOID(opacity >= 0 && opacity <= 1.0);
@@ -458,7 +458,7 @@ void	GLT_LinearLight(u8 (&lookup)[256][256],double opacity)
 	}
 }
 
-//µã¹â
+//ç‚¹å…‰
 void	GLT_PinLight(u8 (&lookup)[256][256],double opacity)
 {
 	TINYIMAGE_ASSERT_VOID(opacity >= 0 && opacity <= 1.0);
@@ -486,7 +486,7 @@ void	GLT_PinLight(u8 (&lookup)[256][256],double opacity)
 	}
 }
 
-//Êµ»ìºÏ
+//å®žæ··åˆ
 void	GLT_HardMix(u8 (&lookup)[256][256],double opacity)
 {
 	TINYIMAGE_ASSERT_VOID(opacity >= 0 && opacity <= 1.0);
@@ -510,7 +510,7 @@ void	GLT_HardMix(u8 (&lookup)[256][256],double opacity)
 	}
 }
 
-//Ïà¼Ó
+//ç›¸åŠ 
 void	GLT_Add(u8 (&lookup)[256][256],double opacity)
 {
 	TINYIMAGE_ASSERT_VOID(opacity >= 0 && opacity <= 1.0);
@@ -524,7 +524,7 @@ void	GLT_Add(u8 (&lookup)[256][256],double opacity)
 	}
 }
 
-//Ïà¼õ
+//ç›¸å‡
 void	GLT_Sub(u8 (&lookup)[256][256],double opacity)
 {
 	TINYIMAGE_ASSERT_VOID(opacity >= 0 && opacity <= 1.0);
@@ -538,7 +538,7 @@ void	GLT_Sub(u8 (&lookup)[256][256],double opacity)
 	}
 }
 
-//Ïà²î
+//ç›¸å·®
 void	GLT_Difference(u8 (&lookup)[256][256],double opacity)
 {
 	TINYIMAGE_ASSERT_VOID(opacity >= 0 && opacity <= 1.0);
@@ -552,7 +552,7 @@ void	GLT_Difference(u8 (&lookup)[256][256],double opacity)
 	}
 }
 
-//ÅÅ³ý
+//æŽ’é™¤
 void	GLT_Exclusion(u8 (&lookup)[256][256],double opacity)
 {
 	TINYIMAGE_ASSERT_VOID(opacity >= 0 && opacity <= 1.0);

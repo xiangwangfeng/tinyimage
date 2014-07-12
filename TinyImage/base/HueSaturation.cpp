@@ -1,4 +1,4 @@
-#include "base/HueSaturation.h"
+ï»¿#include "base/HueSaturation.h"
 #include "GlobalData.h"
 #include "global/ColorSpace.h"
 
@@ -14,12 +14,12 @@ void	AdjustHueSaturation(TiBitmapData& bitmap,int hue,
 	TINYIMAGE_ASSERT_VOID(lightness >= -100 && lightness <= 100);
 	TINYIMAGE_ASSERT_VOID(hueRange >= 0 && hueRange <= 6);
 	
-	//¼ÆËã±ä»¯Á¿
+	//è®¡ç®—å˜åŒ–é‡
 	HueSaturation hueSaturation;
 	HueSaturationParam param(hue,saturation,lightness,hueRange);
 	CalculateTransfer(hueSaturation,param);
 
-	//½øĞĞHueSaturationµÄ±ä»¯
+	//è¿›è¡ŒHueSaturationçš„å˜åŒ–
 	AdjustHueSaturation(bitmap,hueSaturation);
 	
 }
@@ -45,7 +45,7 @@ void	CalculateTransfer(HueSaturation& hs,const HueSaturationParam& param)
 	{
 		for (int i = 0; i < 256; i++)
 		{
-			//¼ÆËãHue Transfer
+			//è®¡ç®—Hue Transfer
 			value = (int)((hs.m_hue[0] + hs.m_hue[hue+1]) * 255 / 360.0 + i);
 			if (value < 0)
 			{
@@ -57,7 +57,7 @@ void	CalculateTransfer(HueSaturation& hs,const HueSaturationParam& param)
 			}
 			hs.m_hueTransfer[hue][i] = value;
 
-			//¼ÆËãLightness Transfer
+			//è®¡ç®—Lightness Transfer
 			value = (int)((hs.m_lightness[0] + hs.m_lightness[hue+1])* 127 / 100.0);
 			value = CLAMP(value,-255,255);
 			if (value < 0)
@@ -69,7 +69,7 @@ void	CalculateTransfer(HueSaturation& hs,const HueSaturationParam& param)
 				hs.m_lightnessTransfer[hue][i] = i + (255 - i)* value / 255;
 			}
 
-			//¼ÆËãSaturation Transfer
+			//è®¡ç®—Saturation Transfer
 			value = (int)((hs.m_saturation[0] + hs.m_saturation[hue+1])* 255 / 100.0);
 			value = CLAMP(value,-255,255);
 			hs.m_saturationTransfer[hue][i] = CLAMP0255(i + value * i / 255);

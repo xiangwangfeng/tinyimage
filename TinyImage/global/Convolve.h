@@ -1,12 +1,12 @@
-/**
+ï»¿/**
  * @file    Convolve.h
- * @brief   ¾í»ı
+ * @brief   å·ç§¯
  * @author  xiangwangfeng <xiangwangfeng@gmail.com>
  * @since   2010-12
  * @website www.xiangwangfeng.com
  */
 
-//Õâ¸öÃ²ËÆÔİÊ±ÓÃ²»µ½ ÓÚÊÇÒ»Ö±Ã»Ğ´.......
+//è¿™ä¸ªè²Œä¼¼æš‚æ—¶ç”¨ä¸åˆ° äºæ˜¯ä¸€ç›´æ²¡å†™.......
 
 #pragma once
 #include "global/BitmapData.h"

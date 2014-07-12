@@ -1,6 +1,6 @@
-/**
+ï»¿/**
  * @file    Invert.h
- * @brief   ·½Ïà
+ * @brief   æ–¹ç›¸
  * @author  xiangwangfeng <xiangwangfeng@gmail.com>
  * @since   2011-1
  * @website www.xiangwangfeng.com

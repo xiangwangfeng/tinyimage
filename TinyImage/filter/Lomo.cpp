@@ -1,4 +1,4 @@
-#include "filter/Lomo.h"
+ï»¿#include "filter/Lomo.h"
 #include "base/NormalBlend.h"
 #include "base/ColorBalance.h"
 #include "base/Levels.h"
@@ -16,7 +16,7 @@ void DarkenCorner(TiBitmapData& bitmap, double brightRatio, u8 maskAlpha)
 	int stride	= bitmap.GetStride();
 	int bpp		= bitmap.GetBpp();
 
-	//¹¹ÔìÍÖÔ²
+	//æ„é€ æ¤­åœ†
 	int halfWidth			= width / 2;
 	int halfHeight			= height/ 2;
 	double effectWidth		= halfWidth * brightRatio; 
@@ -30,21 +30,21 @@ void DarkenCorner(TiBitmapData& bitmap, double brightRatio, u8 maskAlpha)
 	double f1Y		= focusOnX ? 0.0 : focus;
 	double f2X		= focusOnX ? -focus : 0.0;
 	double f2Y		= focusOnX ? 0.0 : -focus;
-	double mindist	= MAX(effectWidth, effectHeight) * 2; // ÍÖÔ²ÖÜÉÏ¾àÀë£¬¸ÃµãÁÁ¶ÈÎª255
+	double mindist	= MAX(effectWidth, effectHeight) * 2; // æ¤­åœ†å‘¨ä¸Šè·ç¦»ï¼Œè¯¥ç‚¹äº®åº¦ä¸º255
 	double maxdist = sqrt((halfWidth - f1X) * (halfWidth  -1 - f1X) + (halfHeight -1 - f1Y) * (halfHeight -1 - f1Y))
-					+ sqrt((halfWidth - f2X) * (halfWidth -1 - f2X) + (halfHeight -1 - f2Y) * (halfHeight -1 - f2Y)); //¶Ô½Çµ½ÍÖÔ²ĞÄ¾àÀë
+					+ sqrt((halfWidth - f2X) * (halfWidth -1 - f2X) + (halfHeight -1 - f2Y) * (halfHeight -1 - f2Y)); //å¯¹è§’åˆ°æ¤­åœ†å¿ƒè·ç¦»
 	assert(mindist == effectWidth * 2 || mindist == effectHeight * 2 );
 
 	double	effectHeightSQR = SQR(effectHeight);
 	double	effectWidthSQR  = SQR(effectWidth);
 	double	effectAreaSQR   = SQR(effectHeight * effectWidth);
-	double* lookupSQR = new double[maxHalfWidthHeight];		//¹¹ÔìÆ½·½ÊıµÄLookupTable
+	double* lookupSQR = new double[maxHalfWidthHeight];		//æ„é€ å¹³æ–¹æ•°çš„LookupTable
 	for (int i = 0; i < maxHalfWidthHeight; i ++)
 	{
 		lookupSQR[i] = (double(i))*i;
 	}
 
-	//¹¹ÔìËÄ¿éÃÉ²ã
+	//æ„é€ å››å—è’™å±‚
 	TinyRGBA* lefttopMask		= new TinyRGBA[halfWidth * halfHeight];
 	TinyRGBA* leftbottomMask	= new TinyRGBA[halfWidth * halfHeight];
 	TinyRGBA* righttopMask		= new TinyRGBA[halfWidth * halfHeight];
@@ -57,13 +57,13 @@ void DarkenCorner(TiBitmapData& bitmap, double brightRatio, u8 maskAlpha)
 		{
 			if (lookupSQR[i] * effectHeightSQR + lookupSQR[j] * effectWidthSQR < effectAreaSQR) 
 			{
-				// ÍÖÔ²ÄÚ
+				// æ¤­åœ†å†…
 				dot->m_alpha = 0;
 				dot->m_blue = dot->m_red = dot->m_green = 0;
 			} 
 			else 
 			{
-				// ÍÖÔ²Íâ£¬¼ÆËãµ½Á½½¹µã¾àÀëºÍ
+				// æ¤­åœ†å¤–ï¼Œè®¡ç®—åˆ°ä¸¤ç„¦ç‚¹è·ç¦»å’Œ
 				double dist = sqrt((i - f1X) * (i - f1X) + (j - f1Y) * (j - f1Y)) + sqrt((i - f2X) * (i - f2X) + (j - f2Y) * (j - f2Y));
 				dist = MAX(dist, mindist);
 				dist = MIN(dist, maxdist);
@@ -99,13 +99,13 @@ void DarkenCorner(TiBitmapData& bitmap, double brightRatio, u8 maskAlpha)
 void	Lomo(TiBitmapData& bitmap)
 {
 
-	//µ÷ÕûÉ«²ÊÆ½ºâ£¬Ôö¼ÓÍ¼Æ¬ÖĞÇà»Æ±ÈÀı
+	//è°ƒæ•´è‰²å½©å¹³è¡¡ï¼Œå¢åŠ å›¾ç‰‡ä¸­é’é»„æ¯”ä¾‹
 	BalanceColor(bitmap,-80,0,-60,TINYIMAGE_TRANSFERMODE_MIDTONES,true);
 	
-	//µ÷ÕûÉ«½×£¬Ê¹µÃÍ¼Æ¬±ä°µ
+	//è°ƒæ•´è‰²é˜¶ï¼Œä½¿å¾—å›¾ç‰‡å˜æš—
 	AdjustLevels(bitmap,27,255,0.96,TINYIMAGE_CHANEL_RGB);
 
-	//Ìí¼Ó°µ½Ç
+	//æ·»åŠ æš—è§’
 	DarkenCorner(bitmap);
 
 }

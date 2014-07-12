@@ -1,6 +1,6 @@
-/**
+ï»¿/**
  * @file    NegativeFilm.h
- * @brief   ·´×ª¸º³å
+ * @brief   åè½¬è´Ÿå†²
  * @author  xiangwangfeng <xiangwangfeng@gmail.com>
  * @since   2011-2
  * @website www.xiangwangfeng.com

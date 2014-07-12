@@ -1,6 +1,6 @@
-/**
+ο»Ώ/**
  * @file    SoftGlow.h
- * @brief   ΘαΉβ
+ * @brief   ζ”ε…‰
  * @author  xiangwangfeng <xiangwangfeng@gmail.com>
  * @since   2011-2
  * @website www.xiangwangfeng.com
@@ -12,7 +12,7 @@
 
 namespace TinyImage{
 
-	//ΘαΉβ
+	//ζ”ε…‰
 	void	SoftGlow(TiBitmapData& bitmap);
 
 }

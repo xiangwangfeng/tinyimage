@@ -1,6 +1,6 @@
-/**
+ï»¿/**
  * @file    OldPhoto.h
- * @brief   ¾ÉÕÕÆ¬
+ * @brief   æ—§ç…§ç‰‡
  * @author  xiangwangfeng <xiangwangfeng@gmail.com>
  * @since   2011-1
  * @website www.xiangwangfeng.com

@@ -1,6 +1,6 @@
-/**
+ï»¿/**
  * @file    GaussBlur.h
- * @brief   ¸ßË¹Ä£ºý
+ * @brief   é«˜æ–¯æ¨¡ç³Š
  * @author  xiangwangfeng <xiangwangfeng@gmail.com>
  * @since   2011-1
  * @website www.xiangwangfeng.com
@@ -15,6 +15,6 @@ namespace TinyImage{
 void	BlurLine (float *lookupTable, float *matrix, int matrixLength, u8* srcLine, u8* dstLine, int width, int bpp);
 int		GenConvolveMatrix (float radius, float** matrix);
 float*	GenLookupTable(float *matrix, int matrixLength);
-void	GaussianBlur(TiBitmapData& bitmap,float radius);	//¸ßË¹Ä£ºý
+void	GaussianBlur(TiBitmapData& bitmap,float radius);	//é«˜æ–¯æ¨¡ç³Š
 
 }
