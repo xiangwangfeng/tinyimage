@@ -11,8 +11,6 @@
 build出DLL文件和lib
 头文件只需要TinyImage.h和GlobalData.h即可 (C#方法可以详见DEMO)
 
-算法说明见 http://www.xiangwangfeng.com
-
 
 如果发现里面的代码有任何bug请自行修正或联系我：
 xiangwangfeng@gmail.com
